@@ -13,8 +13,8 @@
       <li><a href="index.html">Dashboard</a></li>
       <li><a href="produk.html">Produk</a></li>
       <li><a href="kategori.html" class="active">Kategori</a></li>
-      <li><a href="tambah-transaksi.html">Transaksi</a></li>
-      <li><a href="grafik.html">Laporan</a></li>
+      <li><a href="transaksi.html">Transaksi</a></li>
+      <li><a href="laporan.html">Laporan</a></li>
       <li><a href="pengaturan.html">Pengaturan</a></li>
     </ul>
   </nav>
@@ -38,28 +38,6 @@
       </tbody>
     </table>
   </main>
-  <script src="script.js"></script>
-  <script>
-    function showCategoryForm() {
-      document.body.insertAdjacentHTML('beforeend', `
-        <div class='modal' id='category-modal'>
-          <div class='modal-content'>
-            <h2 class='section-title'>Tambah Kategori</h2>
-            <form>
-              <input type='text' placeholder='Nama Kategori' required />
-              <input type='text' placeholder='Deskripsi' />
-              <button class='button' type='submit'>Simpan</button>
-            </form>
-            <button class='button' onclick='closeCategoryForm()'>Tutup</button>
-          </div>
-        </div>
-      `);
-      document.getElementById('category-modal').style.display = 'flex';
-    }
-    function closeCategoryForm() {
-      const modal = document.getElementById('category-modal');
-      if (modal) modal.remove();
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -13,8 +13,8 @@
       <li><a href="index.html">Dashboard</a></li>
       <li><a href="produk.html">Produk</a></li>
       <li><a href="kategori.html">Kategori</a></li>
-      <li><a href="tambah-transaksi.html" class="active">Transaksi</a></li>
-      <li><a href="grafik.html">Laporan</a></li>
+      <li><a href="transaksi.html" class="active">Transaksi</a></li>
+      <li><a href="laporan.html">Laporan</a></li>
       <li><a href="pengaturan.html">Pengaturan</a></li>
     </ul>
   </nav>
@@ -39,29 +39,6 @@
       </tbody>
     </table>
   </main>
-  <script src="script.js"></script>
-  <script>
-    function showTransactionForm() {
-      document.body.insertAdjacentHTML('beforeend', `
-        <div class='modal' id='transaction-modal'>
-          <div class='modal-content'>
-            <h2 class='section-title'>Transaksi Baru</h2>
-            <form>
-              <input type='text' placeholder='Nama Produk / Barcode' required />
-              <input type='number' placeholder='Kuantitas' required />
-              <input type='number' placeholder='Diskon (opsional)' />
-              <button class='button' type='submit'>Tambah Item</button>
-            </form>
-            <button class='button' onclick='closeTransactionForm()'>Tutup</button>
-          </div>
-        </div>
-      `);
-      document.getElementById('transaction-modal').style.display = 'flex';
-    }
-    function closeTransactionForm() {
-      const modal = document.getElementById('transaction-modal');
-      if (modal) modal.remove();
-    }
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

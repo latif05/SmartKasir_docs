@@ -1,54 +1,71 @@
-// File ini tidak diperlukan lagi untuk SPA. Semua halaman sudah dipisah menjadi file HTML terpisah.
+// Function global untuk semua halaman SmartKasir
 
-function loadPage(hash) {
-  const page = hash.replace('#', '') || 'dashboard';
-  document.getElementById('app').innerHTML = pages[page] || pages.dashboard;
-  if (page === 'dashboard') {
-    renderDashboardData();
-  }
-}
-
-window.addEventListener('hashchange', () => loadPage(location.hash));
-window.addEventListener('DOMContentLoaded', () => loadPage(location.hash));
-
-// Dummy form popups (lofi)
-function showProductForm() {
-  document.getElementById('app').innerHTML = `
-    <h2 class='section-title'>Tambah Produk</h2>
-    <form>
-      <input type='text' placeholder='Nama Produk' required />
-      <input type='number' placeholder='Harga Beli' required />
-      <input type='number' placeholder='Harga Jual' required />
-      <input type='number' placeholder='Stok Awal' required />
-      <input type='text' placeholder='Barcode' />
-      <select><option>Kategori</option></select>
-      <button class='button' type='submit'>Simpan</button>
-    </form>
-    <button class='button' onclick='loadPage("#products")'>Kembali</button>
-  `;
-}
-function showCategoryForm() {
-  document.getElementById('app').innerHTML = `
-    <h2 class='section-title'>Tambah Kategori</h2>
-    <form>
-      <input type='text' placeholder='Nama Kategori' required />
-      <input type='text' placeholder='Deskripsi' />
-      <button class='button' type='submit'>Simpan</button>
-    </form>
-    <button class='button' onclick='loadPage("#categories")'>Kembali</button>
-  `;
-}
 function showTransactionForm() {
-  document.getElementById('app').innerHTML = `
-    <h2 class='section-title'>Transaksi Baru</h2>
-    <form>
-      <input type='text' placeholder='Nama Produk / Barcode' required />
-      <input type='number' placeholder='Kuantitas' required />
-      <input type='number' placeholder='Diskon (opsional)' />
-      <button class='button' type='submit'>Tambah Item</button>
-    </form>
-    <button class='button' onclick='loadPage("#transactions")'>Kembali</button>
-  `;
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class='modal' id='transaction-modal'>
+      <div class='modal-content'>
+        <h2 class='section-title'>Transaksi Baru</h2>
+        <form>
+          <input type='text' placeholder='Nama Produk / Barcode' required />
+          <input type='number' placeholder='Kuantitas' required />
+          <input type='number' placeholder='Diskon (opsional)' />
+          <button class='button' type='submit'>Tambah Item</button>
+        </form>
+        <button class='button' onclick='closeTransactionForm()'>Tutup</button>
+      </div>
+    </div>
+  `);
+  document.getElementById('transaction-modal').style.display = 'flex';
+}
+function closeTransactionForm() {
+  const modal = document.getElementById('transaction-modal');
+  if (modal) modal.remove();
+}
+
+function showProductForm() {
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class='modal' id='product-modal'>
+      <div class='modal-content'>
+        <h2 class='section-title'>Tambah Produk</h2>
+        <form>
+          <input type='text' placeholder='Nama Produk' required />
+          <input type='number' placeholder='Harga Beli' required />
+          <input type='number' placeholder='Harga Jual' required />
+          <input type='number' placeholder='Stok Awal' required />
+          <input type='text' placeholder='Barcode' />
+          <select><option>Kategori</option></select>
+          <button class='button' type='submit'>Simpan</button>
+        </form>
+        <button class='button' onclick='closeProductForm()'>Tutup</button>
+      </div>
+    </div>
+  `);
+  document.getElementById('product-modal').style.display = 'flex';
+}
+function closeProductForm() {
+  const modal = document.getElementById('product-modal');
+  if (modal) modal.remove();
+}
+
+function showCategoryForm() {
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class='modal' id='category-modal'>
+      <div class='modal-content'>
+        <h2 class='section-title'>Tambah Kategori</h2>
+        <form>
+          <input type='text' placeholder='Nama Kategori' required />
+          <input type='text' placeholder='Deskripsi' />
+          <button class='button' type='submit'>Simpan</button>
+        </form>
+        <button class='button' onclick='closeCategoryForm()'>Tutup</button>
+      </div>
+    </div>
+  `);
+  document.getElementById('category-modal').style.display = 'flex';
+}
+function closeCategoryForm() {
+  const modal = document.getElementById('category-modal');
+  if (modal) modal.remove();
 }
 
 // Dummy dashboard data renderer
