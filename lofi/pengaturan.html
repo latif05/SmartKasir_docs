@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartKasir - Pengaturan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h1>SmartKasir</h1>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="kategori.html">Kategori</a></li>
+      <li><a href="tambah-transaksi.html">Transaksi</a></li>
+      <li><a href="grafik.html">Laporan</a></li>
+      <li><a href="pengaturan.html" class="active">Pengaturan</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2 class="section-title">Pengaturan Aplikasi</h2>
+    <div class="dashboard-actions">
+      <button class="button" onclick="window.location.href='index.html'">Kembali ke Dashboard</button>
+    </div>
+    <form style="max-width:400px;margin:2rem auto;">
+      <label style="display:block;margin-bottom:0.5rem;">Nama Toko</label>
+      <input type="text" placeholder="Nama Toko Anda" />
+      <label style="display:block;margin-bottom:0.5rem;">Sinkronisasi Otomatis</label>
+      <select><option>Aktif</option><option>Nonaktif</option></select>
+      <label style="display:block;margin-bottom:0.5rem;">Tema</label>
+      <select><option>Default</option><option>Gelap</option></select>
+      <button class="button" type="submit">Simpan Pengaturan</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

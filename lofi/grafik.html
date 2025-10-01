@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartKasir - Laporan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h1>SmartKasir</h1>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="kategori.html">Kategori</a></li>
+      <li><a href="tambah-transaksi.html">Transaksi</a></li>
+      <li><a href="grafik.html" class="active">Laporan</a></li>
+      <li><a href="pengaturan.html">Pengaturan</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2 class="section-title">Laporan Penjualan</h2>
+    <div class="dashboard-actions">
+      <button class="button" onclick="window.location.href='index.html'">Kembali ke Dashboard</button>
+    </div>
+    <div style="margin-bottom:2rem;">
+      <h3 style="color:#4f8a8b;">Grafik Penjualan (Dummy)</h3>
+      <div style="background:#f6f7fb;border-radius:8px;padding:1rem;text-align:center;">
+        <span style="font-size:2rem;color:#4f8a8b;">📊</span>
+        <p style="color:#888;">Grafik penjualan akan tampil di sini.</p>
+      </div>
+    </div>
+    <table style="width:100%;margin-top:1rem;border-collapse:collapse;">
+      <thead>
+        <tr style="background:#f6f7fb;">
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Tanggal</th>
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Total Penjualan</th>
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Laba/Rugi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01/10/2025</td><td>Rp 1.250.000</td><td>Rp 350.000</td></tr>
+        <tr><td>30/09/2025</td><td>Rp 1.100.000</td><td>Rp 320.000</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

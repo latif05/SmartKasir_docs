@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartKasir - Lofi UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h1>SmartKasir</h1>
+    <ul>
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="kategori.html">Kategori</a></li>
+      <li><a href="tambah-transaksi.html">Transaksi</a></li>
+      <li><a href="grafik.html">Laporan</a></li>
+      <li><a href="pengaturan.html">Pengaturan</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2 class='section-title'>Dashboard</h2>
+    <div class='dashboard-grid'>
+      <div class='dashboard-card'>
+        <h3>Total Penjualan Hari Ini</h3>
+        <div class='value'>Rp 1.250.000</div>
+      </div>
+      <div class='dashboard-card'>
+        <h3>Jumlah Produk</h3>
+        <div class='value'>24</div>
+      </div>
+      <div class='dashboard-card'>
+        <h3>Transaksi Hari Ini</h3>
+        <div class='value'>17</div>
+      </div>
+    </div>
+    <div class='dashboard-actions'>
+      <a class='button' href='tambah-transaksi.html'>Transaksi Baru</a>
+      <a class='button' href='produk.html'>Tambah Produk</a>
+      <a class='button' href='grafik.html'>Lihat Laporan</a>
+    </div>
+    <div>
+      <h3 style='color:#4f8a8b;'>Riwayat Transaksi Terbaru</h3>
+      <table style='width:100%;margin-top:1rem;border-collapse:collapse;'>
+        <thead>
+          <tr style='background:#f6f7fb;'>
+            <th style='padding:0.5rem;border-bottom:1px solid #eee;'>Waktu</th>
+            <th style='padding:0.5rem;border-bottom:1px solid #eee;'>Produk</th>
+            <th style='padding:0.5rem;border-bottom:1px solid #eee;'>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>09:10</td><td>Teh Botol x2</td><td>Rp 14.000</td></tr>
+          <tr><td>09:25</td><td>Roti Tawar x1</td><td>Rp 12.000</td></tr>
+          <tr><td>10:02</td><td>Kopi Sachet x3</td><td>Rp 21.000</td></tr>
+          <tr><td>10:15</td><td>Indomie Goreng x5</td><td>Rp 50.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

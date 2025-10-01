@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartKasir - Kategori</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <h1>SmartKasir</h1>
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="kategori.html" class="active">Kategori</a></li>
+      <li><a href="tambah-transaksi.html">Transaksi</a></li>
+      <li><a href="grafik.html">Laporan</a></li>
+      <li><a href="pengaturan.html">Pengaturan</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2 class="section-title">Manajemen Kategori</h2>
+    <div class="dashboard-actions">
+      <button class="button" onclick="showCategoryForm()">Tambah Kategori</button>
+      <button class="button" onclick="window.location.href='produk.html'">Kembali ke Produk</button>
+    </div>
+    <table style="width:100%;margin-top:1rem;border-collapse:collapse;">
+      <thead>
+        <tr style="background:#f6f7fb;">
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Nama Kategori</th>
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Deskripsi</th>
+          <th style="padding:0.5rem;border-bottom:1px solid #eee;">Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="category-list">
+        <tr><td>Minuman</td><td>Produk minuman kemasan dan sachet</td><td><button class="button" style="padding:0.2rem 0.7rem;">Edit</button></td></tr>
+        <tr><td>Makanan</td><td>Produk makanan siap saji dan roti</td><td><button class="button" style="padding:0.2rem 0.7rem;">Edit</button></td></tr>
+      </tbody>
+    </table>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    function showCategoryForm() {
+      document.body.insertAdjacentHTML('beforeend', `
+        <div class='modal' id='category-modal'>
+          <div class='modal-content'>
+            <h2 class='section-title'>Tambah Kategori</h2>
+            <form>
+              <input type='text' placeholder='Nama Kategori' required />
+              <input type='text' placeholder='Deskripsi' />
+              <button class='button' type='submit'>Simpan</button>
+            </form>
+            <button class='button' onclick='closeCategoryForm()'>Tutup</button>
+          </div>
+        </div>
+      `);
+      document.getElementById('category-modal').style.display = 'flex';
+    }
+    function closeCategoryForm() {
+      const modal = document.getElementById('category-modal');
+      if (modal) modal.remove();
+    }
+  </script>
+</body>
+</html>
