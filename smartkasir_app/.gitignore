@@ -1,0 +1,14 @@
+.dart_tool/
+.packages
+build/
+.idea/
+.gradle/
+**/Generated.xcconfig
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+pubspec.lock
+/.vscode/
+*.iml
+android/.gradle
+android/app/*.keystore

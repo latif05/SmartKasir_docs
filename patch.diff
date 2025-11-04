@@ -1,0 +1,8 @@
+*** Begin Patch
+*** Update File: SmartKasir_docs/smartkasir_app/pubspec.yaml
+@@
+   path_provider: ^2.0.15
+   path: ^1.8.3
+   http: ^0.13.6
++  shared_preferences: ^2.0.15
+*** End Patch

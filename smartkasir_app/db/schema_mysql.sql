@@ -1,0 +1,61 @@
+-- MySQL schema for SmartKasir (server-side)
+-- Adjust types and constraints for MySQL
+
+CREATE DATABASE IF NOT EXISTS smartkasir_app;
+USE smartkasir_app;
+
+CREATE TABLE IF NOT EXISTS categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category_id INT,
+  name VARCHAR(255) NOT NULL,
+  cost_price DECIMAL(12,2),
+  sell_price DECIMAL(12,2),
+  stock INT DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_products_category FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS transactions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  date DATETIME NOT NULL,
+  total DECIMAL(12,2),
+  discount DECIMAL(12,2) DEFAULT 0,
+  final_amount DECIMAL(12,2),
+  payment_method VARCHAR(50),
+  status VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS transaction_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  transaction_id INT,
+  product_id INT,
+  qty INT,
+  sell_price DECIMAL(12,2),
+  subtotal DECIMAL(12,2),
+  CONSTRAINT fk_items_transaction FOREIGN KEY (transaction_id) REFERENCES transactions(id) ON DELETE CASCADE,
+  CONSTRAINT fk_items_product FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS settings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  store_name VARCHAR(255),
+  store_address TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS sync_logs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  table_name VARCHAR(255),
+  record_id INT,
+  action VARCHAR(50),
+  synced_at TIMESTAMP NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -77,6 +77,9 @@ MVP ini akan fokus pada fitur-fitur inti yang paling esensial untuk memecahkan m
 *   **PRD-SET-001: Pengaturan Informasi Toko:** Pengguna dapat mengisi/mengedit nama toko dan alamat yang akan muncul di struk.
 *   **PRD-SET-002: Manajemen Kategori Produk:** Pengguna dapat menambah, mengedit, dan menghapus kategori produk.
 
+**6.5. Modul Kategori (Category)**
+*   **PRD-CAT-002: Manajemen Kategori Produk:** Pengguna dapat menambah, mengedit, dan menghapus kategori produk.
+
 ### **7. Fitur Non-Fungsional**
 
 *   **NFR-PERF-001 (Performa):** Waktu loading layar utama/dashboard dan layar transaksi tidak lebih dari 3 detik. Proses penyelesaian transaksi tidak lebih dari 2 detik.
@@ -93,7 +96,7 @@ MVP ini akan fokus pada fitur-fitur inti yang paling esensial untuk memecahkan m
 
 *   **Frontend:** Flutter (Dart)
 *   **Backend (API & Server):** Node.js dengan Express.js
-*   **Database Remote:** PostgreSQL
+*   **Database Remote:** MySQL
 *   **Database Lokal (Offline):** SQLite
 *   **Arsitektur:** Clean Architecture (Domain, Data, Presentation Layers)
 *   **Version Control:** Git

@@ -1,0 +1,24 @@
+name: smartkasir_app
+description: A minimal SmartKasir Flutter app scaffold for the SmartKasir project.
+publish_to: 'none'
+version: 0.1.0
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  sqflite: ^2.2.8+4
+  path_provider: ^2.0.15
+  path: ^1.8.3
+  http: ^0.13.6
+  shared_preferences: ^2.0.15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
